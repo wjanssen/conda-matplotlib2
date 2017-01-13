@@ -1,0 +1,88 @@
+package:
+  name: matplotlib
+  version: "2.0.0rc1"
+
+source:
+  fn: matplotlib-2.0.0rc1.tar.gz
+  url: https://pypi.python.org/packages/6f/85/439f8297eca3481c1fc2e39d07197c72ba16a8ac9cc6e6e43710ceb550a3/matplotlib-2.0.0rc1.tar.gz
+  md5: 5df3e0c5f6389662fcb5a5588386dfe5
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - numpy >=1.7.1
+    - six >=1.10
+    - python-dateutil
+    - functools32
+    - subprocess32
+    - pytz
+    - cycler >=0.10
+    - pyparsing >=1.5.6,!=2.0.4,!=2.1.2,!=2.1.6,!=2.0.0
+    - pkg-config                # [not linux] [not win]
+    - libpng >=1.6.23,<1.7
+    - freetype
+    - zlib 1.2.*                # [win]
+
+  run:
+    - python
+    - numpy >=1.7.1
+    - six >=1.10
+    - python-dateutil
+    - functools32
+    - subprocess32
+    - pytz
+    - cycler >=0.10
+    - pyparsing >=1.5.6,!=2.0.4,!=2.1.2,!=2.1.6,!=2.0.0
+    - libpng
+    - freetype
+
+test:
+  # Python imports
+  imports:
+    - matplotlib
+    - matplotlib.axes
+    - matplotlib.backends
+    - matplotlib.compat
+    - matplotlib.delaunay
+    - matplotlib.projections
+    - matplotlib.sphinxext
+    - matplotlib.sphinxext.tests
+    - matplotlib.style
+    - matplotlib.testing
+    - matplotlib.testing.jpl_units
+    - matplotlib.tests
+    - matplotlib.tri
+    - mpl_toolkits
+    - mpl_toolkits.axes_grid
+    - mpl_toolkits.axes_grid1
+    - mpl_toolkits.axisartist
+    - mpl_toolkits.mplot3d
+    - mpl_toolkits.tests
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: http://matplotlib.org
+  license: Python Software Foundation License
+  summary: 'Python plotting package'
+  license_family: Proprietary
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
